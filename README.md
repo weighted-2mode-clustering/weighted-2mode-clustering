@@ -1,16 +1,30 @@
-## Hi there 👋
+# weighted_2mode_clustering
 
-<!--
-**weighted-2mode-clustering/weighted-2mode-clustering** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+This repository provides the R function `weighted_2mode_clustering`, 
+developed for the study:
 
-Here are some ideas to get you started:
+**"Marketing Analysis via Weighted Two-Mode Network" (Under Review)**
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+The function computes an asymmetric weighted two-mode clustering coefficient, which measures the degree of structural overlap (redundancy) between nodes in a bipartite network. It is particularly designed for marketing research where brand × image weighted data are common.
+
+## Files
+- `weighted_2mode_clustering.R`: Main function script.
+- `example.R`: A script demonstrating how to use the function.
+- `Beer.csv`: A small sample dataset (2 brands × 2 images) for testing.
+
+## Usage
+To calculate the clustering coefficients, run the following in R:
+
+```r
+source("weighted_2mode_clustering.R")
+
+# Load sample data
+beer <- read.csv("Beer.csv", row.names = 1)
+
+# Brand-side clustering (measures how much a brand overlaps with others)
+brand_cc <- weighted_2mode_clustering(beer, mode = "row")
+brand_cc
+
+# Image-side clustering (measures how much an image overlaps with others)
+image_cc <- weighted_2mode_clustering(beer, mode = "col")
+image_cc
