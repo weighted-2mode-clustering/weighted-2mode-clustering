@@ -16,7 +16,7 @@ The function computes an asymmetric weighted two-mode clustering coefficient, wh
 To calculate the clustering coefficients, run the following in R:
 
 ```r
-source("weighted_2mode_clustering")
+source("weighted_2mode_clustering.R")
 
 # Load sample data
 beer <- read.csv("Beer.csv", row.names = 1)
