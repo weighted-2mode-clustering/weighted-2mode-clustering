@@ -21,9 +21,9 @@ $$
 
 where:
 
-- \(X_{ui}\): weight of the tie between brand \(u\) and image \(i\)  
-- \(\min(X_{ui}, X_{vi})\): overlapping portion of the two brands’ image profiles  
-- denominator \(\sum_i X_{ui}\): normalizes by the total image weight of brand \(u\)
+- \(Xui\): weight of the tie between brand \(u\) and image \(i\)  
+- \(Σi min(Xui, Xvi)\): overlapping portion of the two brands’ image profiles  
+- denominator \(Σi Xui\): normalizes by the total image weight of brand \(u\)
 
 The overall clustering coefficient of brand \(u\) is the average of \(C_u(v)\) over all other brands \(v\).
 
@@ -73,4 +73,3 @@ image_cc
 ```
 
 ---
-
