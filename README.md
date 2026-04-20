@@ -9,21 +9,85 @@ It is particularly designed for marketing research where **brand × image weight
 
 ---
 
-## 📐 Definition
+.
 
-For a weighted two-mode matrix \(X\) (brands × images),  
-the asymmetric clustering coefficient of brand \(u\) with respect to brand \(v\) is defined as:
+📐 Definition
+For a weighted two-mode matrix 
+𝑋
+ (brands × images),
+the asymmetric clustering coefficient of brand 
+𝑢
+ with respect to brand 
+𝑣
+ is defined as:
 
-$$
-C_u(v) = 
-\frac{\sum_i \min(X_{ui}, X_{vi})}{\sum_i X_{ui}}
-$$
-
+𝐶
+𝑢
+(
+𝑣
+)
+=
+∑
+𝑖
+min
+⁡
+(
+𝑋
+𝑢
+𝑖
+,
+𝑋
+𝑣
+𝑖
+)
+∑
+𝑖
+𝑋
+𝑢
+𝑖
 where:
 
-- \(X_{ui}\): weight of the tie between brand \(u\) and image \(i\)  
-- \(\min(X_{ui}, X_{vi})\): overlapping portion of the two brands’ image profiles  
-- denominator \(\sum_i X_{ui}\): normalizes by the total image weight of brand \(u\)
+𝑋
+𝑢
+𝑖
+: weight of the tie between brand 
+𝑢
+ and image 
+𝑖
+
+min
+⁡
+(
+𝑋
+𝑢
+𝑖
+,
+𝑋
+𝑣
+𝑖
+)
+: overlapping portion of the two brands’ image profiles
+
+denominator 
+∑
+𝑖
+𝑋
+𝑢
+𝑖
+: normalizes by the total image weight of brand 
+𝑢
+
+The overall clustering coefficient of brand 
+𝑢
+ is the average of 
+𝐶
+𝑢
+(
+𝑣
+)
+ over all other brands 
+𝑣
+.
 
 ---
 
