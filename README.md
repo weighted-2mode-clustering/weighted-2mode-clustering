@@ -143,3 +143,6 @@ beer <- read.csv("Beer.csv", row.names = 1)
 brand_cc <- weighted_2mode_clustering(beer, mode = "row")
 brand_cc
 
+# Image-side clustering (how much an image overlaps with others)
+image_cc <- weighted_2mode_clustering(beer, mode = "col")
+image_cc
