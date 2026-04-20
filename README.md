@@ -1,15 +1,10 @@
-# weighted_2mode_clustering
+weighted_2mode_clustering
+This repository provides the R function weighted_2mode_clustering, developed for the study:
 
-This repository provides the R function **`weighted_2mode_clustering`**, developed for the study:
+"Marketing Analysis via Weighted Two-Mode Network" (Under Review)
 
-**"Marketing Analysis via Weighted Two-Mode Network" (Under Review)**
-
-The function computes an **asymmetric weighted two-mode clustering coefficient**, which measures the degree of structural overlap (redundancy) between nodes in a bipartite network.  
-It is particularly designed for marketing research where **brand × image weighted data** are common.
-
----
-
-.
+The function computes an asymmetric weighted two-mode clustering coefficient, which measures the degree of structural overlap (redundancy) between nodes in a bipartite network.
+It is particularly designed for marketing research where brand × image weighted data are common.
 
 📐 Definition
 For a weighted two-mode matrix 
@@ -89,37 +84,56 @@ The overall clustering coefficient of brand
 𝑣
 .
 
----
+🧠 Interpretation
+𝐶
+𝑢
+(
+𝑣
+)
+ measures how much of brand 
+𝑢
+’s image structure is redundant with brand 
+𝑣
+.
 
-## 🧠 Interpretation
+Because the denominator is based on brand 
+𝑢
+’s total image weight, the measure is asymmetric:
 
-- \(C_u(v)\) measures **how much of brand \(u\)’s image structure is redundant with brand \(v\)**.  
-- Because the denominator is based on brand \(u\)’s total image weight, the measure is **asymmetric**:
+𝐶
+𝑢
+(
+𝑣
+)
+≠
+𝐶
+𝑣
+(
+𝑢
+)
+A high value means brand 
+𝑢
+ is strongly overlapped (cannibalized) by brand 
+𝑣
+.
 
-$$
-C_u(v) \neq C_v(u)
-$$
+A low value means brand 
+𝑢
+ holds non‑redundant, distinctive image associations  
+(i.e., occupies a structural hole).
 
-- A **high** value means brand \(u\) is strongly overlapped (cannibalized) by brand \(v\).  
-- A **low** value means brand \(u\) holds **non‑redundant, distinctive image associations**  
-  (i.e., occupies a structural hole).
+This formulation extends Latapy et al. (2008) to weighted data and introduces directionality,
+which is essential for marketing applications where brand uniqueness matters.
 
-This formulation extends Latapy et al. (2008) to weighted data and introduces **directionality**,  
-which is essential for marketing applications where **brand uniqueness** matters.
+📁 Files
+weighted_2mode_clustering.R: Main function script
 
----
+example.R: Usage example
 
-## 📁 Files
+Beer.csv: Small sample dataset (2 brands × 2 images)
 
-- `weighted_2mode_clustering.R`: Main function script  
-- `example.R`: Usage example  
-- `Beer.csv`: Small sample dataset (2 brands × 2 images)
-
----
-
-## ▶ Usage
-
-```r
+▶ Usage
+r
 source("weighted_2mode_clustering.R")
 
 # Load sample data
@@ -129,7 +143,3 @@ beer <- read.csv("Beer.csv", row.names = 1)
 brand_cc <- weighted_2mode_clustering(beer, mode = "row")
 brand_cc
 
-# Image-side clustering (how much an image overlaps with others)
-image_cc <- weighted_2mode_clustering(beer, mode = "col")
-image_cc
-```
